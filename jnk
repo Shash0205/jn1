@@ -30,11 +30,20 @@ pipeline {
         }
 
         stage('DEPLOY') {
+         parallel{
+          stage ( 'SERVER1' ) {
             steps {
                 echo "this is deploy"
                 sh 'sleep 5'
             }
         }
+        stage ( 'SERVER2' ) {
+            steps {
+                echo "this is deploy"
+                sh 'sleep 5'
+            }
+        }
+
     }
 
     post {
