@@ -43,6 +43,13 @@ pipeline {
                 sh 'sleep 5'
             }
         }
+        stage ( 'SERVER3' ) {
+            steps {
+                echo "this is deploy"
+                sh 'sleep 5'
+            }
+        }
+
       }
         post {
         always {
