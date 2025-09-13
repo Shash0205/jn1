@@ -43,7 +43,7 @@ pipeline {
                 sh 'sleep 5'
             }
         }
-
+      }
     }
 
     post {
