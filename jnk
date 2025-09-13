@@ -17,13 +17,13 @@ pipeline {
                 stage('TEST ON CHROME') {
                     steps {
                         echo "this is test on chrome"
-                        sh 'sleep 5; exit 1'
+                        sh 'sleep 5; exit 0'
                     }
                 }
                 stage('TEST ON BROWSER') {
                     steps {
                         echo "this is test browser"
-                        sh 'sleep 5; exit 1'
+                        sh 'sleep 5; exit 0'
                     }
                 }
             }
