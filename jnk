@@ -13,7 +13,7 @@ pipeline {
                 '''
             }
         }
-stage('BUILD PARALLEL'){
+stage('BUILD PARALLEL ak'){
             steps {
                 echo "this is build"
                 sh '''
