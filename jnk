@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('BUILD') {
           parallel{
-           stage('BUILD PARALLEL')
+           stage('BUILD PARALLEL'){
             steps {
                 echo "this is build"
                 sh '''
@@ -13,7 +13,7 @@ pipeline {
                 '''
             }
         }
-stage('BUILD PARALLEL')
+stage('BUILD PARALLEL'){
             steps {
                 echo "this is build"
                 sh '''
@@ -64,4 +64,4 @@ stage('BUILD PARALLEL')
 }
 }
 }
-      
+  }    
