@@ -49,19 +49,7 @@ pipeline {
                 sh 'sleep 5'
             }
         }
-
+}
+}
+}
       }
-        post {
-        always {
-            echo "Pipeline finished."
-        }
-        success {
-            echo "Pipeline succeeded."
-        }
-        failure {
-            echo "Pipeline failed."
-        }
-    }
-}
-}
-}
