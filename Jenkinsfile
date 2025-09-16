@@ -1,10 +1,56 @@
 pipeline {
     agent any
+
     stages {
         stage('BUILD') {
             steps {
-                echo "this is"
+                echo "this is build"
+                sh '''
+                    sleep 5
+                    exit 0
+                '''
             }
+        }
+
+        stage('TEST PARALLEL') {
+            parallel {
+                stage('TEST ON CHROME') {
+                    steps {
+                        echo "this is test on chrome"
+                        sh 'sleep 5; exit 0'
+                    }
+                }
+                stage('TEST ON BROWSER') {
+                    steps {
+                        echo "this is test browser"
+                        sh 'sleep 5; exit 0'
+                    }
+                }
+            }
+        }
+
+        stage('DEPLOY') {
+         parallel{
+          stage ( 'SERVER1' ) {
+            steps {
+                echo "this is deploy"
+                sh 'sleep 5'
+            }
+        }
+        stage ( 'SERVER2' ) {
+            steps {
+                echo "this is deploy"
+                sh 'sleep 5'
+            }
+        }
+        stage ( 'SERVER3' ) {
+            steps {
+                echo "this is deploy"
+                sh 'sleep 5'
+            }
+        }
+
+      }
         }
     }
 }
